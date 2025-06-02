@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gerenciamento de Projeto</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Projeto em Equipe</h1>
+
+
+  <section>
+    <h2>1. Cadastro de Integrantes</h2>
+    <input type="text" id="nomeIntegrante" placeholder="Nome do integrante" />
+    <button onclick="adicionarIntegrante()">Adicionar Integrante</button>
+    <br/><br/>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Integrantes Cadastrados</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaIntegrantes"></tbody>
+    </table>
+    <br/>
+    <button id="btnIniciarProjeto" onclick="iniciarProjeto()" disabled>Iniciar Projeto</button>
+  </section>
+
+  <hr />
+
+
+  <section>
+    <h2>2. Cadastro de Tarefas</h2>
+
+    <input type="text" id="nomeTarefa" placeholder="Nome da Tarefa" />
+    <input type="text" id="descricaoTarefa" placeholder="Descrição" />
+    <select id="responsavelTarefa">
+      <option value="">Selecione</option>
+    </select>
+    <input type="date" id="dataTarefa" />
+    <button onclick="adicionarTarefa()">Adicionar Tarefa</button>
+
+    <br/><br/>
+
+    <h3>Filtros</h3>
+    <label for="filtroStatus">Status:</label>
+    <select id="filtroStatus">
+      <option value="">Todos</option>
+      <option value="Pendente">Pendente</option>
+      <option value="Concluída">Concluída</option>
+    </select>
+
+    <label for="filtroResponsavel">Responsável:</label>
+    <select id="filtroResponsavel">
+      <option value="">Todos</option>
+    </select>
+
+    <br/><br/>
+
+    <h3>Painel de Estatísticas</h3>
+    <div id="painelEstatisticas">
+      <p>Total de Tarefas: <span id="totalTarefas">0</span></p>
+      <p>Concluídas: <span id="tarefasConcluidas">0</span></p>
+      <p>Pendentes: <span id="tarefasPendentes">0</span></p>
+    </div>
+
+    <br/>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Responsável</th>
+          <th>Data</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaTarefas"></tbody>
+    </table>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
